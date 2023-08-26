@@ -1,0 +1,21 @@
+
+
+/* Your custom styles */
+.critter-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.critter-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.shiny {
+  border-color: gold; /* Example style for shiny critters */
+}
