@@ -1,30 +1,25 @@
-/* components/CritterCard.css */
+/* CritterCard.css */
+.card-container {
+  width: 100%; /* Make card container responsive */
+  height: 250px; /* Increase height */
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .critter-card {
-    border: 2px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: border-color 0.3s ease, transform 0.2s ease;
-  }
-  
-  .critter-card:hover {
-    border-color: #ffcc00;
-  }
-  
-  .critter-card.shiny {
-    border-color: #f0e68c;
-  }
-  
-  .critter-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 5px;
-  }
-  
-  .critter-card p {
-    margin: 0;
-    font-weight: bold;
-  }
-  
+  width: 100%; /* Increase width */
+  height: 250px; /* Increase height */
+  perspective: 1000px;
+  cursor: pointer;
+  position: relative;
+}
+
+.critter-card img {
+  width: 100%; /* Increase image width */
+  height: 150px; /* Increase image height */
+  object-fit: contain;
+}

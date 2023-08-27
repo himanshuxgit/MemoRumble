@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 import useCritters from "./useCritters";
 import CritterCard from "./CritterCard";
 import "../styles/CritterGame.css"; // Import your custom CSS file
-import logo from "/logo.png";
+import logo from "/logo.png"
 
 function CritterGame() {
   const { critters, getRandomCritters, shuffleCritters, setCritters } = useCritters();
   const [selectedCritter, setSelectedCritter] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function fetchData() {
-      const randomCritters = await getRandomCritters(9); // Fetch 9 random Critters
+      const randomCritters = await getRandomCritters(10); // Fetch 9 random Critters
       setCritters(randomCritters);
-      setIsLoading(false); // Data is loaded, set isLoading to false
     }
     fetchData();
   }, []);
@@ -26,30 +24,22 @@ function CritterGame() {
     shuffleCritters();
   };
 
-  return (
-    <div>
-      <nav className="nav-bar">
-        <div className="logo-container">
-          <img src={logo} alt="MemoRumble Logo" className="logo" />
-        </div>
-        <h1 className="game-name">MemoRumble</h1>
-      </nav>
-      {isLoading ? (
-        <div className="loading-container">
-          <img src={logo} alt="Loading" className="loading-logo" />
-        </div>
-      ) : (
-        <div className="critter-list">
-          {critters.map((critter) => (
-            <CritterCard
-              key={critter.id}
-              critter={critter}
-              onClick={() => handleCritterClick(critter)}
-            />
-          ))}
-        </div>
-      )}
-    </div>
+  return (<>
+    <nav className="nav-bar">
+      <div className="logo-container">
+        <img src={logo} alt="MemoRumble Logo" className="logo" />
+      </div>
+      <h1 className="game-name">MemoRumble</h1>
+    </nav>
+    <div className="critter-list">
+      {critters.map((critter) => (
+        <CritterCard
+          key={critter.id}
+          critter={critter}
+          onClick={() => handleCritterClick(critter)}
+        />
+      ))}
+    </div></>
   );
 }
 
