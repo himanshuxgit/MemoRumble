@@ -40,6 +40,12 @@ body {
   width: 100px;
   height: 100px;
 }
+.logo:hover {
+  filter: drop-shadow(0 0 2em #bbbbbbaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #ffffffaa);
+}
 
 .game-name {
   flex: 1;

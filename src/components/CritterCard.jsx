@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Tilt from "react-parallax-tilt"; // Import Tilt component
 import "../styles/CritterCard.css"; // Import your custom CSS file
-import logo from "/logo.png"; // Import your logo
-
 function CritterCard({ critter, onClick }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
