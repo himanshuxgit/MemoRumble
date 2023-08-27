@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import useCritters from "./useCritters";
 import CritterCard from "./CritterCard";
 import "../styles/CritterGame.css"; // Import your custom CSS file
+import logo from "/logo.png"
 
 function CritterGame() {
   const { critters, getRandomCritters, shuffleCritters, setCritters } = useCritters();
@@ -9,7 +10,7 @@ function CritterGame() {
 
   useEffect(() => {
     async function fetchData() {
-      const randomCritters = await getRandomCritters(12); // Fetch 10 random Critters
+      const randomCritters = await getRandomCritters(9); // Fetch 9 random Critters
       setCritters(randomCritters);
     }
     fetchData();
@@ -23,7 +24,13 @@ function CritterGame() {
     shuffleCritters();
   };
 
-  return (
+  return (<>
+    <nav className="nav-bar">
+      <div className="logo-container">
+        <img src={logo} alt="MemoRumble Logo" className="logo" />
+      </div>
+      <h1 className="game-name">MemoRumble</h1>
+    </nav>
     <div className="critter-list">
       {critters.map((critter) => (
         <CritterCard
@@ -32,7 +39,7 @@ function CritterGame() {
           onClick={() => handleCritterClick(critter)}
         />
       ))}
-    </div>
+    </div></>
   );
 }
 
