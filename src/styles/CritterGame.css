@@ -1,4 +1,9 @@
-
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
 .critter-list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -61,4 +66,14 @@
     color: #333;
     margin: 0; /* Remove any margin */
   }
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh; /* Adjust the height as needed */
+  }
   
+  .loading-logo {
+    width: 300px; /* Adjust the width */
+    height: 300px; /* Maintain the aspect ratio */
+  }
