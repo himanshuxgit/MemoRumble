@@ -23,7 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 5%;
   width: 100%;
   background-color: #000;
 }
@@ -33,8 +33,8 @@ body {
 }
 
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: auto;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #bbbbbbaa);
@@ -49,33 +49,40 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 40px;
+  font-size: 5vw;
   font-weight: bold;
   color: #ccc;
   margin: 0;
+  font-size: 5vw;
 }
 
 .loading-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh;
+  height: 80vh;
 }
 
 .loading-logo {
-  width: 300px;
+  width: 150px;
   height: auto;
   animation: fadeInOut 2s infinite alternate;
 }
 
 .critter-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
-  max-width: 1500px;
+  max-width: 90%;
   margin: 0 auto;
   opacity: 1;
-  transition: opacity 1s ease-in-out; /* Apply transition for smooth fade effect */
+  transition: opacity 1s ease-in-out;
+}
+@media (min-width: 1200px) {
+  .critter-list {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
 }
 
 .critter-list.shuffling {
