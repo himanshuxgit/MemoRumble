@@ -1,0 +1,30 @@
+/* components/CritterCard.css */
+.critter-card {
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .critter-card:hover {
+    border-color: #ffcc00;
+  }
+  
+  .critter-card.shiny {
+    border-color: #f0e68c;
+  }
+  
+  .critter-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 5px;
+  }
+  
+  .critter-card p {
+    margin: 0;
+    font-weight: bold;
+  }
+  
