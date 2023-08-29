@@ -15,16 +15,23 @@ export default function useCritters() {
   const getRandomCritters = async (amount) => {
     const shinyProbability = 0.1;
     const crittersToShow = [];
-
+    const usedIds = new Set(); // To keep track of used IDs
+  
     while (crittersToShow.length < amount) {
-      const randomId = Math.floor(Math.random() * POSSIBLE_CRITTERS) + 1;
+      let randomId;
+      do {
+        randomId = Math.floor(Math.random() * POSSIBLE_CRITTERS) + 1;
+      } while (usedIds.has(randomId)); // Check if ID is already used
+  
+      usedIds.add(randomId);
+  
       const url = `https://pokeapi.co/api/v2/pokemon/${randomId}`;
       const critterData = await fetchPokemonData(url);
-
+  
       const isShiny = Math.random() < shinyProbability;
-      crittersToShow.push({ ...critterData, shiny: isShiny });
+      crittersToShow.push({ ...critterData, shiny: isShiny, id: randomId }); // Make sure to add the ID
     }
-
+  
     return crittersToShow;
   };
 
