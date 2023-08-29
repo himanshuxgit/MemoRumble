@@ -88,3 +88,46 @@ body {
 .critter-list.shuffling {
   opacity: 0; /* Set opacity to 0 during shuffling */
 }
+.score {
+  font-size: 20px;
+  color: white;
+  margin-right: 20px;
+}
+.winning-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 70px;
+}
+
+.close-button {
+  font-size: 18px; /* Adjust the font size as needed */
+  padding: 10px 20px; /* Adjust the padding as needed */
+  cursor: pointer;
+  background-color: #473607;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #926703;
+}
+.score-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.score, .best-score {
+  margin-right: 20px;
+}
