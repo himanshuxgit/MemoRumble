@@ -47,10 +47,16 @@
 }
 
 .card-name {
-  font-size: 18px;
-  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(32, 31, 31, 0.6);
+  color: white;
   text-align: center;
-  margin-top: 8px;
+  font-size: 14px;
+  text-transform: capitalize; 
 }
 
 
