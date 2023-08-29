@@ -12,11 +12,15 @@ function CritterGame() {
   const [isFirstSelection, setIsFirstSelection] = useState(true);
   const [bestScore, setBestScore] = useState(0);
   const [hasWon, setHasWon] = useState(false);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
+
 
   useEffect(() => {
     async function fetchData() {
       const randomCritters = await getRandomCritters(10);
       setCritters(randomCritters);
+      setIsLoading(false); // Cards are loaded, set loading to false
+
     }
     fetchData();
   }, []);
@@ -76,6 +80,11 @@ function CritterGame() {
           <div className="best-score">Best Score: <span className="score-value">{bestScore}</span></div>
         </div>
       </nav>
+      {isLoading ? ( // Show loading logo while cards are loading
+        <div className="loading-logo-container">
+          <img src={logo} alt="Loading..." className="loading-logo" />
+        </div>
+      ) : (
       <div className={`critter-list ${isShuffling ? 'shuffling' : ''}`}>
         {hasWon ? (
           <div className="winning-message">
@@ -94,6 +103,7 @@ function CritterGame() {
           ))
         )}
       </div>
+      )}
     </div>
   );
 }

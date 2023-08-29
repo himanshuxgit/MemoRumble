@@ -63,11 +63,7 @@ body {
   height: 80vh;
 }
 
-.loading-logo {
-  width: 150px;
-  height: auto;
-  animation: fadeInOut 2s infinite alternate;
-}
+
 
 .critter-list {
   display: grid;
@@ -130,4 +126,20 @@ body {
 
 .score, .best-score {
   margin-right: 20px;
+}
+.loading-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
+  z-index: 999; /* Make sure the loading logo appears above other content */
+}
+
+.loading-logo.visible {
+  opacity: 1;
+}
+
+.loading-logo.hidden {
+  opacity: 0;
 }
