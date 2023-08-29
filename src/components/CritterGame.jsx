@@ -83,6 +83,7 @@ function CritterGame() {
       {isLoading ? ( // Show loading logo while cards are loading
         <div className="loading-logo-container">
           <img src={logo} alt="Loading..." className="loading-logo" />
+          <div className="loadingMsg"><p>Loading...</p></div>
         </div>
       ) : (
       <div className={`critter-list ${isShuffling ? 'shuffling' : ''}`}>

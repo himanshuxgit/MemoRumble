@@ -127,13 +127,33 @@ body {
 .score, .best-score {
   margin-right: 20px;
 }
+.loading-logo-container {
+  display: flex;
+  flex-direction: column; /* Display logo and message in a column */
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px; /* Adjust as needed */
+}
+
 .loading-logo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: auto; /* Adjust as needed */
+  height: 200px; /* Adjust as needed */
+  animation: fadeInOut 1s infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loading-logo {
+  margin-top: 20px; /* Add margin to separate logo and message */
+  opacity: 0;
   transition: opacity 0.5s;
-  z-index: 999; /* Make sure the loading logo appears above other content */
 }
 
 .loading-logo.visible {
@@ -142,4 +162,10 @@ body {
 
 .loading-logo.hidden {
   opacity: 0;
+}
+
+.loading-logo p {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #888;
 }
