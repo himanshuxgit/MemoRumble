@@ -15,7 +15,6 @@ function CritterCard({ critter, onClick }) {
       reset
       glareEnable={critter.shiny || true}
       glareMaxOpacity={0.4}
-      glareColor={critter.shiny ? "#f1b818" : "#fff"}
       glarePosition="all"
       className={`card-container`}
     >
