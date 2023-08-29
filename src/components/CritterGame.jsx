@@ -15,7 +15,7 @@ function CritterGame() {
 
   useEffect(() => {
     async function fetchData() {
-      const randomCritters = await getRandomCritters(4);
+      const randomCritters = await getRandomCritters(10);
       setCritters(randomCritters);
     }
     fetchData();
