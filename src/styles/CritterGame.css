@@ -1,40 +1,21 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  @apply box-border m-0 p-0;
 }
-
 body {
-  background-color: #232222;
-  color: white;
-  font-family: 'Dekko';
-  font-size: 22px;
-  text-align: center;
+  @apply bg-[#232222] text-[white] text-[22px] text-center;
+  font-family: "Dekko";
 }
-
-
 .loading-logo {
-  width: 300px;
-  height: auto;
-  animation: fadeInOut 2s infinite alternate;
+  @apply w-[300px] h-auto animate-[fadeInOut_2s_infinite_alternate] w-auto h-[200px] animate-[fadeInOut_1s_infinite] opacity-0 transition-opacity duration-[0.5s] mt-5;
 }
-
 .nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 5%;
-  width: 100%;
-  background-color: #232222;
+  @apply flex justify-between items-center w-full bg-[#232222] px-[5%] py-2.5;
 }
-
 .logo-container {
-  margin-right: 10px;
+  @apply mr-2.5;
 }
-
 .logo {
-  width: 80px;
-  height: auto;
+  @apply w-20 h-auto;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #bbbbbbaa);
@@ -42,130 +23,57 @@ body {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #ffffffaa);
 }
-
 .game-name {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 5vw;
-  font-weight: bold;
-  color: #ccc;
-  margin: 0;
-  font-size: 5vw;
+  @apply flex-1 flex items-center justify-center text-center text-[5vw] font-[bold] text-[#ccc] text-[5vw] m-0;
 }
-
 .loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 80vh;
+  @apply flex justify-center items-start h-[80vh];
 }
-
-
-
 .critter-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  max-width: 90%;
-  margin: 80px;
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
+  @apply grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-5 max-w-[90%] opacity-100 transition-opacity duration-[1s] ease-[ease-in-out] m-20;
 }
 @media (min-width: 1200px) {
   .critter-list {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    @apply grid-cols-[repeat(5,1fr)] gap-5;
   }
 }
-
 .critter-list.shuffling {
-  opacity: 0; /* Set opacity to 0 during shuffling */
+  @apply opacity-0;
+
 }
 .score {
-  font-size: 20px;
-  color: white;
-  margin-right: 20px;
+  @apply text-xl text-[white] mr-5;
 }
 .winning-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 70px;
+  @apply absolute -translate-x-2/4 -translate-y-2/4 bg-[rgba(0,0,0,0.8)] text-[white] text-center text-[70px] p-5 rounded-[5px] left-2/4 top-2/4;
 }
-
 .close-button {
-  font-size: 18px; /* Adjust the font size as needed */
-  padding: 10px 20px; /* Adjust the padding as needed */
-  cursor: pointer;
-  background-color: #473607;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
+  @apply text-lg cursor-pointer bg-[#473607] text-white transition-[background-color] duration-[0.3s] ease-[ease] px-5 py-2.5 rounded-[5px] border-[none] hover:bg-[#926703];
 
-.close-button:hover {
-  background-color: #926703;
 }
 .score-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  font-size: 18px;
+  @apply flex flex-col items-center text-lg mt-5;
 }
-
-.score, .best-score {
-  margin-right: 20px;
+.score,
+.best-score {
+  @apply mr-5;
 }
 .loading-logo-container {
-  display: flex;
-  flex-direction: column; /* Display logo and message in a column */
-  align-items: center;
-  justify-content: center;
-  margin-top: 150px; /* Adjust as needed */
-}
+  @apply flex flex-col items-center justify-center mt-[150px];
 
+}
 .loading-logo {
-  width: auto; /* Adjust as needed */
-  height: 200px; /* Adjust as needed */
-  animation: fadeInOut 1s infinite;
+  @apply h-16 w-16 transition-opacity ease-in duration-700 opacity-100 hover:opacity-0;
 }
-
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
 .loading-logo {
-  margin-top: 20px; /* Add margin to separate logo and message */
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
+  @apply w-auto h-48 transition-opacity duration-500 opacity-100 hover:opacity-0;
+}  
 .loading-logo.visible {
-  opacity: 1;
+  @apply opacity-100;
 }
-
 .loading-logo.hidden {
-  opacity: 0;
+  @apply opacity-0;
 }
-
 .loading-logo p {
-  margin: 10px 0 0;
-  font-size: 14px;
-  color: #888;
+  @apply text-sm text-[#888] mt-2.5 mb-0 mx-0;
 }

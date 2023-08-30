@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import CritterGame from "./components/CritterGame";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
