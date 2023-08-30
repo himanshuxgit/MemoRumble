@@ -63,7 +63,7 @@ body {
 
 }
 .loading-logo {
-  @apply h-16 w-16 transition-opacity ease-in duration-700 opacity-100 hover:opacity-0;
+  @apply h-16 w-16 transition-opacity ease-in duration-700 opacity-100 hover:opacity-10;
 }
 .loading-logo {
   @apply w-auto h-48 transition-opacity duration-500 opacity-100 hover:opacity-0;
