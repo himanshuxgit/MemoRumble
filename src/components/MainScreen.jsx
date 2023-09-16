@@ -18,7 +18,7 @@ function MainScreen({ onStartGameClick }) {
         <h1>Welcome to MemoRumble</h1>
         <p className="details">
           Test your memory skills by matching the cards! <br/>Can you find
-          all the critters without making a mistake?
+          all the Pokemons without making a mistake?
         </p>{" "}
         <p className="details">
           Click on a card. Try to remember it,
