@@ -10,7 +10,7 @@ import Switch from "react-switch";
 const bgAudio = new Audio(pokeAudio);
 
 function CritterGame() {
-  playAudio(bgAudio);
+  playAudio(bgAudio,0.1);
 
   const {
     critters,
