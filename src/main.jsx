@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import CritterGame from "./components/CritterGame";
+import Game from "./components/Game";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CritterGame />
+    <Game/>
   </React.StrictMode>
 );
