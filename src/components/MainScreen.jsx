@@ -21,7 +21,7 @@ function MainScreen({ onStartGameClick }) {
           all the critters without making a mistake?
         </p>{" "}
         <p className="details">
-          Click on a critter card. Try to remember it,
+          Click on a card. Try to remember it,
           and then click on another card. <br/>If they match, your score resets. If
           they don't, you earn a point. Keep
           playing to beat your high score!
