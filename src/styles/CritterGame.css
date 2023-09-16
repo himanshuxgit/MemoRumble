@@ -45,12 +45,43 @@ body {
   @apply text-xl text-[white] mr-5;
 }
 .winning-message {
-  @apply absolute -translate-x-2/4 -translate-y-2/4 bg-[rgba(0,0,0,0.8)] text-[white] text-center text-[70px] p-5 rounded-[5px] left-2/4 top-2/4;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(147, 135, 135, 0.8);
+  color: white;
+  text-align: center;
+  font-size: 70px;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 999; /* Ensure it appears above other elements */
 }
-.close-button {
-  @apply text-lg cursor-pointer bg-[#473607] text-white transition-[background-color] duration-[0.3s] ease-[ease] px-5 py-2.5 rounded-[5px] border-[none] hover:bg-[#926703];
 
+/* Style for the close button */
+.close-button {
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #473607;
+  color: white;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
 }
+
+@media screen and (max-width: 768px) {
+  .winning-message {
+    font-size: 30px;
+    padding: 10px; 
+  }
+  .close-button {
+    font-size: 18px; 
+    padding: 8px 16px;
+  }
+}
+
 .score-bar {
   @apply flex flex-col items-center text-lg mt-5;
 }
@@ -76,4 +107,10 @@ body {
 }
 .loading-logo p {
   @apply text-sm text-[#888] mt-2.5 mb-0 mx-0;
+}
+.mute-switch-container {
+  @apply fixed flex items-center right-5 bottom-5;
+}
+.react-switch {
+  @apply w-[60px] h-[30px];
 }
